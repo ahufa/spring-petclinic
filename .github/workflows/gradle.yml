@@ -25,7 +25,8 @@ jobs:
         run: |
           git pull origin main
           ./gradlew build
+          ./gradlew bootRun
       - name: Test
-        run: ./gradlew test
+        run: ./gradlew test -i
       #- name: Validate
       #- name: Deploy
