@@ -27,5 +27,5 @@ jobs:
           ./gradlew build
       - name: Test
         run: ./gradlew test
-      - name: Validate
-      - name: Deploy
+      #- name: Validate
+      #- name: Deploy
