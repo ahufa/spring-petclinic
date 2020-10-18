@@ -23,7 +23,7 @@ jobs:
         run: chmod +x gradlew
       - name: Build
         run: |
-          git pull
+          git pull origin main
           ./gradlew build
       - name: Test
         run: ./gradlew test
