@@ -26,9 +26,9 @@ jobs:
           git pull origin main
           ./gradlew build -x test
           java -jar ./build/libs/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
-        if: ${{ success() }}
-          run: java -jar ./build/libs/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar stop
       - name: Test
-        run: ./gradlew test -i
+        run: |
+          run: java -jar ./build/libs/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar stop
+          ./gradlew test -i
       #- name: Validate
       #- name: Deploy
