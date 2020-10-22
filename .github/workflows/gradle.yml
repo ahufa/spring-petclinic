@@ -26,9 +26,9 @@ jobs:
           git pull origin main
           ./gradlew build clean -x test
       - name: Test
-        run: ./gradlew test -i
+        run: ./gradlew test -i clean
       - name: Validate
-        run: ./gradlew check
+        run: ./gradlew check clean
       - name: Deploy
         uses: akhileshns/heroku-deploy@master
         with:
