@@ -24,11 +24,11 @@ jobs:
       - name: Build
         run: |
           git pull origin main
-          ./gradlew build -x test
-        #  java -jar ./build/libs/spring-petclinic-2.3.0.BUILD-SNAPSHOT.jar
+          ./gradlew build clean -x test
       - name: Test
         run: ./gradlew test -i
-      #- name: Validate
+      - name: Validate
+        run: ./gradlew check
       - name: Deploy
         uses: akhileshns/heroku-deploy@master
         with:
