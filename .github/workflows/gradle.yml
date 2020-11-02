@@ -31,9 +31,10 @@ jobs:
         run: ./gradlew check
       - name: Analyze sonarqube
         run: |
-          ./gradlew dockerComposeUp
-          ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
-          ./gradlew -i test jacocoTestReport
+          sudo docker-compose up -d
+          sudo ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
+          sudo ./gradlew -i test jacocoTestReport
+          sudo docker-compose down
       - name: Deploy
         uses: AkhileshNS/heroku-deploy@v3.6.8
         with:
