@@ -32,7 +32,7 @@ jobs:
       - name: Analyze sonarqube
         run: |
           sudo docker-compose up -d
-          sudo ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000
+          sudo ./gradlew sonarqube -Dsonar.host.url=http://localhost:9000 --stacktrace
           sudo ./gradlew -i test jacocoTestReport
           sudo docker-compose down
       - name: Deploy
